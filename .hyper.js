@@ -48,3 +48,101 @@ module.exports = {
       lightRed: '#ff0000',
       lightGreen: '#33ff00',
       lightYellow: '#FED766',
+      lightBlue: '#0066ff',
+      lightMagenta: '#cc00ff',
+      lightCyan: '#00C7FF',
+      lightWhite: '#ffffff'
+    },
+    
+    // the shell to run when spawning a new session (i.e. /usr/local/bin/fish)
+    // if left empty, your system's login shell will be used by default
+    shell: '/bin/zsh',
+
+    // for setting shell arguments (i.e. for using interactive shellArgs: ['-i'])
+    // by default ['--login'] will be used
+    shellArgs: ['--login'],
+
+    // An object of environment variables to set before launching shell
+    env: {},
+
+    // if true, selected text will automatically be copied to the clipboard
+    copyOnSelect: false,
+
+    // if true, on right click selected text will be copied or pasted if no
+    // selection is present (true by default on Windows)
+    quickEdit: false,
+
+    // The number of rows to be persisted in terminal buffer for scrolling
+    scrollback: 10000,
+
+    // hyperborder config
+    hyperBorder: {
+      borderColors: ['#1D976C', '#93F9B9'],
+      blurredColors: ['#177C59', '#84E0A6']
+    },
+
+    // hyper-pane config
+    paneNavigation: {
+      debug: false,
+      hotkeys: {
+        navigation: {
+          up: 'ctrl+alt+up',
+          down: 'ctrl+alt+down',
+          left: 'ctrl+alt+left',
+          right: 'ctrl+alt+right'
+        },
+        jump_prefix: 'ctrl+alt', // completed with 1-9 digits
+        permutation_modifier: 'shift', // Added to jump and navigation hotkeys for pane permutation
+        maximize: 'meta+enter'
+      },
+      showIndicators: false, // Show pane number
+      indicatorPrefix: '^⌥', // Will be completed with pane number
+      indicatorStyle: { // Added to indicator <div>
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        fontSize: '10px'
+      },
+      focusOnMouseHover: false,
+      inactivePaneOpacity: 0.6 // Set to 1 to disable inactive panes dimming
+    },
+
+      // set to `true` (without backticks) if you're using a Linux setup that doesn't show native menus
+    // default: `false` on Linux, `true` on Windows (ignored on macOS)
+    showHamburgerMenu: '',
+
+    // set to `false` if you want to hide the minimize, maximize and close buttons
+    // additionally, set to `'left'` if you want them on the left, like in Ubuntu
+    // default: `true` on windows and Linux (ignored on macOS)
+    showWindowControls: '',
+  },
+
+  // a list of plugins to fetch and install from npm
+  // format: [@org/]project[#version]
+  // examples:
+  //   `hyperpower`
+  //   `@company/project`
+  //   `project#1.0.1`
+  plugins: [
+    "hypertheme",
+    "hyperline",
+    "hyperminimal",
+    "hyperborder",
+    "hyper-night-owl",
+    "hyper-search",
+    "hyper-pane",
+    "hypercwd",
+	  "gitrocket",
+  ],
+
+  // in development, you can create a directory under
+  // `~/.hyper_plugins/local/` and include it here
+  // to load it and avoid it being `npm install`ed
+  localPlugins: [],
+
+  keymaps: {
+    // Example
+    // 'window:devtools': 'cmd+alt+o'
+  }
+};
+
